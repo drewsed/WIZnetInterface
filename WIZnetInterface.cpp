@@ -49,7 +49,7 @@ DHCPClient dhcp;
 #if defined(TARGET_WIZwiki_W7500) || defined(TARGET_WIZwiki_W7500ECO) || defined(TARGET_WIZwiki_W7500P)
     NetworkInterface *NetworkInterface::get_default_instance()
     {
-        WIZnetInterface eth;
+        static WIZnetInterface eth;
         return &eth;
     }
 #else
