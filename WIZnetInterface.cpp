@@ -453,7 +453,7 @@ nsapi_error_t WIZnetInterface::socket_accept(nsapi_socket_t server, nsapi_socket
     *handle = get_sock(SKT(server)->fd, SKT(server)->proto);
 
     if (!(*handle)) {
-        error("No more sockets for binding");
+        //error("No more sockets for binding");
         return NSAPI_ERROR_NO_SOCKET;
     }
 
@@ -476,7 +476,7 @@ nsapi_error_t WIZnetInterface::socket_accept(nsapi_socket_t server, nsapi_socket
     //create a new tcp socket for the server
     SKT(server)->fd = _wiznet.new_socket();
     if (SKT(server)->fd < 0) {
-        error("No more sockets for listening");
+        //error("No more sockets for listening");
         //return NSAPI_ERROR_NO_SOCKET;
         // already accepted socket, so return 0, but there is no listen socket anymore.
         return 0;
@@ -489,14 +489,14 @@ nsapi_error_t WIZnetInterface::socket_accept(nsapi_socket_t server, nsapi_socket
 
     // and then, for the next connection, server socket should be assigned new one.
     if (socket_bind(server, _addr) < 0) {
-        error("No more sockets for listening");
+        //error("No more sockets for listening");
         //return NSAPI_ERROR_NO_SOCKET;
         // already accepted socket, so return 0, but there is no listen socket anymore.
         return 0;
     }
 
     if (socket_listen(server, 1) < 0) {
-        error("No more sockets for listening");
+        //error("No more sockets for listening");
         // already accepted socket, so return 0, but there is no listen socket anymore.
         return 0;
     }
