@@ -200,7 +200,7 @@ void WIZnetInterface::socket_check_read()
             }
             _mutex.unlock();
         }
-        wait_ms(1);
+        ThisThread::sleep_for(1);
     }
 }
 
