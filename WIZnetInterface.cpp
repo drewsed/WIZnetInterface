@@ -25,7 +25,7 @@ static uint8_t WIZNET_DEFAULT_TESTMAC[6] = {0x00, 0x08, 0xdc, 0x19, 0x85, 0xa8};
 //static int udp_local_port = 0;
 
 #define SKT(h) ((wiznet_socket*)h)
-#define WIZNET_WAIT_TIMEOUT   400
+#define WIZNET_WAIT_TIMEOUT   0//400
 #define WIZNET_WAIT_TIMEOUT1   1000
 #define WIZNET_ACCEPT_TIMEOUT 300000 //5 mins timeout, retrun NSAPI_ERROR_WOULD_BLOCK if there is no connection during 5 mins
 
